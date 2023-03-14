@@ -33,6 +33,20 @@ app.get("/contact", (req, res) => {
   res.send("hellow from the contact page");
 });
 
+app.get
+("/about/*",(req,res)=>{
+  res.render("404",{
+    errorComment: "Oops this about page couldn't be found"
+  })
+})
+
+app.get
+("*",(req,res)=>{
+  res.render("404",{
+    errorComment: "Oops page couldn't be found"
+  })
+})//to consider all other inputs except the specified
+
 app.listen(8000, () => {
   console.log(`listening to the port no 8000`);
 });
